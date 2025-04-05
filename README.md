@@ -1,5 +1,10 @@
 # Banking App
 
+This is a simple banking application consisting of 3 microservices.
+- **banking-app**. Frontend react appplication.
+- **banking-service**. Backend spring boot application.
+- **notification-service**. Backend spring boot application.
+
 ### Prerequisites
 
 - install node v22
@@ -42,3 +47,22 @@ Update recipient email in sendEmailNotification method.
 ```
 String emailID = "<recipient-email>";
 ```
+
+## Run the application
+
+cd banking-app
+```
+npm start
+```
+
+On a new terminal. Start banking-service.
+On a new terminal. Start notification-service.
+
+## Frontend components
+
+## Backend components
+1. Database 
+build.gradle
+
+
+
