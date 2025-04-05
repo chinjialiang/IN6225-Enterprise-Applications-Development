@@ -95,6 +95,38 @@ session.timeout.ms=45000
 acks=all
 client.id=ccloud-java-client-a714104c-3ce0-4cca-a4cd-7d43b0444be1
 ```
+KafkaConfig
+```
+package com.notificationservice.messaging;
+
+import org.springframework.stereotype.Component;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Properties;
+
+@Component
+public class KafkaConfig {
+
+    public static Properties readConfig(final String configFile) throws IOException {
+        // reads the client configuration from client.properties
+        // and returns it as a Properties object
+        if (!Files.exists(Paths.get(configFile))) {
+            throw new IOException(configFile + " not found.");
+        }
+
+        final Properties config = new Properties();
+        try (InputStream inputStream = new FileInputStream(configFile)) {
+            config.load(inputStream);
+        }
+
+        return config;
+    }
+}
+```
 KafkaProducer
 ```
 @Component
@@ -202,5 +234,81 @@ public class ObjectToJsonUtil {
 
         return "";
     }
+}
+```
+
+<br/>
+
+### Sending Email Notifications Using jakarta.mail
+EmailUtil
+```
+package com.notificationservice.util;
+
+import jakarta.mail.Message;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+import java.util.Date;
+
+public class EmailUtil {
+
+    public static void sendEmail(Session session, String toEmail, String subject, String body){
+        try {
+            MimeMessage msg = new MimeMessage(session);
+
+            msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
+            msg.addHeader("format", "flowed");
+            msg.addHeader("Content-Transfer-Encoding", "8bit");
+            msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
+            msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
+            msg.setSubject(subject, "UTF-8");
+            msg.setText(body, "UTF-8");
+            msg.setSentDate(new Date());
+            msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
+
+            Transport.send(msg);
+
+            System.out.println("Email Sent Successfully!!");
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+sendEmailNotification method
+```
+public static void sendEmailNotification(String message) throws JsonProcessingException {
+
+    Transaction transaction = objectMapper.readValue(message, Transaction.class);
+
+    String smtpHostServer = "smtp.gmail.com";
+    String emailID = "<recipient-email>";
+
+    Properties props = System.getProperties();
+    props.put("mail.smtp.starttls.enable","true");
+    props.put("mail.smtp.host", smtpHostServer);
+    props.put("mail.smtp.auth", "true");
+
+    Session session = Session.getInstance(props, new Authenticator(){
+        protected PasswordAuthentication getPasswordAuthentication() {
+            return new PasswordAuthentication(
+                    "chinjialiang@live.com", "mlpg qoyp fotm hfai");// https://support.google.com/accounts/answer/185833?hl=en
+        }
+    });
+
+    EmailUtil.sendEmail(session, emailID,"iBanking Alerts",
+            "Dear Customer, " + '\n' + '\n' +
+                    "We are pleased to confirm that the transaction was completed."  + '\n' + '\n' +
+                    "Transaction ID: " + transaction.getTransactionId() + '\n' +
+                    "From Account: " + transaction.getFromAccount() + '\n' +
+                    "To Account: " + transaction.getToAccount() + '\n' +
+                    "Amount: " + transaction.getAmount() + '\n' +
+                    "Datetime: " + transaction.getDateTime().plus(8, ChronoUnit.HOURS) + '\n' + '\n' +
+                    "Thank you for banking with us." + '\n' + '\n' +
+                    "Yours faithfully" + '\n' +
+                    "DBS Bank Ltd"
+    );
 }
 ```
