@@ -78,7 +78,7 @@ Newly created SQL scripts placed in `banking-service\src\main\resources\db\migra
 <p align="center">
   <img src="https://github.com/user-attachments/assets/921ac27b-7515-439a-9125-cfbc48b0ec8a" />
 </p>
-
+<br/>
 ### Event driven capabilities using kafka
 build.gradle
 ```
@@ -154,7 +154,7 @@ public class KafkaConsumer {
 }
 ```
 Refer to https://developer.confluent.io/get-started/java/#introduction on how to setup kafka.
-
+<br/>
 ### Object Mapper Using Jackson
 build.gradle
 ```
