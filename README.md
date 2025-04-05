@@ -55,14 +55,24 @@ cd banking-app
 npm start
 ```
 
-On a new terminal. Start banking-service.
+On a new terminal. Start banking-service. <br/>
 On a new terminal. Start notification-service.
 
 ## Frontend components
 
 ## Backend components
-1. Database 
+### Database migration using flyway
 build.gradle
-
+```
+implementation 'org.flywaydb:flyway-mysql'
+implementation 'org.flywaydb:flyway-core'
+```
+application.properties
+```
+spring.flyway.locations=classpath:db/migrations
+spring.flyway.enabled=true
+spring.flyway.baseline-on-migrate = true
+```
+Newly created SQL scripts placed in banking-service\src\main\resources\db\migrations will automatically run when the application starts. 
 
 
