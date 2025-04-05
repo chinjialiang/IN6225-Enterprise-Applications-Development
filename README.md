@@ -73,7 +73,7 @@ spring.flyway.locations=classpath:db/migrations
 spring.flyway.enabled=true
 spring.flyway.baseline-on-migrate = true
 ```
-Newly created SQL scripts placed in `banking-service\src\main\resources\db\migrations` will automatically run when the application starts. The database will keep track of all schema change history. 
+Newly created SQL scripts placed in `banking-service\src\main\resources\db\migrations` will automatically run when the application starts. The database will keep track of all schema change history. <br/>
 ![image](https://github.com/user-attachments/assets/921ac27b-7515-439a-9125-cfbc48b0ec8a)
 
 
