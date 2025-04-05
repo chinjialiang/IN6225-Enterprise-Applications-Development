@@ -72,7 +72,7 @@ public class NotificationService {
         Transaction transaction = objectMapper.readValue(message, Transaction.class);
 
         String smtpHostServer = "smtp.gmail.com";
-        String emailID = "chinjialiang@live.com";
+        String emailID = "<recipient-email>";
 
         Properties props = System.getProperties();
         props.put("mail.smtp.starttls.enable","true");
