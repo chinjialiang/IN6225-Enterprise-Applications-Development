@@ -1,0 +1,22 @@
+.summary-card {
+  background-color: white !important;
+  padding: 20px 20px;
+}
+
+.summary-card-content-left {
+  width: 40%;
+  gap: 20px;
+}
+
+.summary-card-content-right {
+  width: 60%;
+
+  .financial-overview-text {
+    margin-bottom: 35px;
+  }
+
+  .financial-overview-text-sub {
+    margin-bottom: 0px;
+    color: gray;
+  }
+}

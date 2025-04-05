@@ -1,0 +1,15 @@
+.register-card {
+  padding: 20px 40px;
+}
+
+.button-group {
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation-button-group {
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
