@@ -294,7 +294,7 @@ public static void sendEmailNotification(String message) throws JsonProcessingEx
     Session session = Session.getInstance(props, new Authenticator(){
         protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(
-                    "chinjialiang@live.com", "mlpg qoyp fotm hfai");// https://support.google.com/accounts/answer/185833?hl=en
+                    "<email>", "<app-password>");// https://support.google.com/accounts/answer/185833?hl=en
         }
     });
 
