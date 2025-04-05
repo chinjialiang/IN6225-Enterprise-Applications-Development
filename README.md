@@ -155,3 +155,50 @@ public class KafkaConsumer {
 ```
 Refer to https://developer.confluent.io/get-started/java/#introduction on how to setup kafka.
 
+** Object Mapper Using Jackson
+build.gradle
+```
+implementation 'com.fasterxml.jackson.core:jackson-databind'
+implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.3'
+implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+```
+JacksonConfiguration
+```
+@Configuration
+public class JacksonConfiguration {
+
+    @Bean
+    ObjectMapper objectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        return objectMapper;
+    }
+}
+```
+ObjectToJsonUtil
+```
+@Component
+public class ObjectToJsonUtil {
+
+    ObjectMapper objectMapper;
+
+    public ObjectToJsonUtil(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    public String convertObjectToJsonString (Object object) {
+        try {
+            String jsonStr = objectMapper.writeValueAsString(object);
+            System.out.println(jsonStr);
+            return jsonStr;
+        }
+
+        // Catch block to handle exceptions
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+}
+```
