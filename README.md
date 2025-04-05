@@ -2,5 +2,5 @@
 
 ### Prerequisites
 
-install node v22
-install java 17
+- install node v22
+- install java 17
