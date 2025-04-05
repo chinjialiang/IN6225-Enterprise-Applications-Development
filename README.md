@@ -155,7 +155,7 @@ public class KafkaConsumer {
 ```
 Refer to https://developer.confluent.io/get-started/java/#introduction on how to setup kafka.
 
-** Object Mapper Using Jackson
+### Object Mapper Using Jackson
 build.gradle
 ```
 implementation 'com.fasterxml.jackson.core:jackson-databind'
