@@ -20,18 +20,15 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-cache'
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
+	// database
 	implementation 'com.mysql:mysql-connector-j'
 	implementation 'org.hibernate.validator:hibernate-validator'
 
 	// kafka
 	implementation 'org.apache.kafka:kafka-clients:3.3.1'
 
-	// for hashing
-	implementation 'com.google.guava:guava:11.0'
-
+	// database migration
 	implementation 'org.flywaydb:flyway-mysql'
 	implementation 'org.flywaydb:flyway-core'
 
