@@ -28,13 +28,13 @@ Go to client.properties in banking-service and notification-service. Update the 
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='<username>' password='<password>';
 ```
 
-Go to https://support.google.com/accounts/answer/185833?hl=en. Create a app-password. \n
+Go to https://support.google.com/accounts/answer/185833?hl=en. Create a app-password. 
 Go to notification-service/src/main/java/com/notificationservice/service/NotificationService.java. Update email and app-password.
 ```
-        Session session = Session.getInstance(props, new Authenticator(){
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(
-                        "<email>", "<app-password>");// https://support.google.com/accounts/answer/185833?hl=en
-            }
-        });
+Session session = Session.getInstance(props, new Authenticator(){
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(
+                "<email>", "<app-password>");// https://support.google.com/accounts/answer/185833?hl=en
+    }
+});
 ```
