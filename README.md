@@ -67,7 +67,17 @@ npm start
 ```
 
 On a new terminal. Start banking-service. <br/>
-On a new terminal. Start notification-service.
+On a new terminal. Start notification-service. <br/>
+If you have java and gradle installed
+```
+./gradlew clean build
+./gradlew bootrun
+```
+else locate NotificationServiceApplication / BankingServiceApplication and start the application
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8d2d6071-df01-4dc2-8d10-57d4066f36dc" />
+</p> <br/>
 
 ## Frontend components
 
