@@ -22,8 +22,11 @@ Refer to https://www.freecodecamp.org/news/node-version-manager-nvm-install-guid
 install java 17
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/0b87fe0f-b5f6-453b-b28c-7c4e61893a22" />
-  <img src="https://github.com/user-attachments/assets/5d8f2ceb-bd5e-479e-8bec-9218f893d290" />
+  <img src="https://github.com/user-attachments/assets/1b6ad28a-a97b-4687-af23-5e00a4b3355f" />
+  <img src="https://github.com/user-attachments/assets/ff24fa65-a084-4a2e-9f2f-86acb47d18eb" />
+  <img src="https://github.com/user-attachments/assets/ebb40461-13aa-428d-80ea-81cdd694f5ff" />
+  <img src="https://github.com/user-attachments/assets/5bd1d5b5-acbb-4f5c-9d59-8441b4771390" />
+  <img src="https://github.com/user-attachments/assets/3181ec78-c65e-44b3-829d-17eb25680699" />
 </p> <br/>
 
 ## Initial setup
