@@ -90,15 +90,27 @@ else locate NotificationServiceApplication / BankingServiceApplication and start
 ## Frontend components
 ### Account Registration (POST /register)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33937370-337c-454c-a814-315a8a194aad" />
+</p> <br/>
 
 ### Account Login (POST /login)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5748e8f4-d990-4513-928f-ceb97bc07eb7" />
+</p> <br/>
 
 ### Account Details and Transactions (GET /transactions/{accountNumber})
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5926cb90-bba5-4c8f-8cbd-f1f23461ee34" />
+</p> <br/>
 
 ### Fund Transfer (POST /transfer-fund)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/015cfaa9-218c-457d-a0e4-a8d8a3040d82" />
+</p> <br/>
 
 ## Backend components
 ### Database migration using flyway
