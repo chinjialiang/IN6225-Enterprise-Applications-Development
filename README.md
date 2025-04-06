@@ -7,8 +7,19 @@ This is a simple banking application consisting of 3 microservices.
 
 ### Prerequisites
 
-- install node v22
-- install java 17
+Install node v22
+```
+nvm install 22.0.0
+nvm use 22.0.0
+```
+Verification
+```
+node -v
+v22.0.0
+```
+Refer to https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/ on how to set up node version manager.
+
+install java 17
 
 ## Initial setup
 
