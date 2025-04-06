@@ -58,7 +58,7 @@ Go to `notification-service/src/main/java/com/notificationservice/service/Notifi
 Session session = Session.getInstance(props, new Authenticator(){
     protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(
-                "<email>", "<app-password>");// https://support.google.com/accounts/answer/185833?hl=en
+                "<your-email>", "<app-password>");// https://support.google.com/accounts/answer/185833?hl=en
     }
 });
 ```
