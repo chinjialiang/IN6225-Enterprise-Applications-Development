@@ -21,6 +21,11 @@ Refer to https://www.freecodecamp.org/news/node-version-manager-nvm-install-guid
 
 install java 17
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0b87fe0f-b5f6-453b-b28c-7c4e61893a22" />
+  <img src="https://github.com/user-attachments/assets/5d8f2ceb-bd5e-479e-8bec-9218f893d290" />
+</p> <br/>
+
 ## Initial setup
 
 cd banking-app
