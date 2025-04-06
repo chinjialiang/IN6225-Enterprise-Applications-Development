@@ -25,7 +25,7 @@ install java 17
 
 cd banking-app
 ```
-npm install --legacy-peer-deps
+npm install
 ```
 
 Install MySQL server and start the server. Run the command on SQL workbench to create a new schema.
