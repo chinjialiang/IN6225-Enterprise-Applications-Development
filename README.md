@@ -88,17 +88,17 @@ else locate NotificationServiceApplication / BankingServiceApplication and start
 </p> <br/>
 
 ## Frontend components
-### Account Registration
-POST /register
+### Account Registration (POST /register)
 
-### Account Login
-POST /login
 
-### Account Details and Transactions
-GET /transactions/{accountNumber}
+### Account Login (POST /login)
 
-### Fund Transfer
-POST /transfer-fund
+
+### Account Details and Transactions (GET /transactions/{accountNumber})
+
+
+### Fund Transfer (POST /transfer-fund)
+
 
 ## Backend components
 ### Database migration using flyway
