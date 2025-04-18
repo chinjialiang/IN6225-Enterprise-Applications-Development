@@ -87,6 +87,12 @@ else locate NotificationServiceApplication / BankingServiceApplication and start
   <img src="https://github.com/user-attachments/assets/8d2d6071-df01-4dc2-8d10-57d4066f36dc" />
 </p> <br/>
 
+## Architecture
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/662feb7b-65a1-4c84-a73e-567a49b74c9b" />
+</p> <br/>
+
 ## Frontend components
 ### Account Registration (POST /register)
 
