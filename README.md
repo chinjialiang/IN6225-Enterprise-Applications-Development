@@ -134,7 +134,11 @@ spring.flyway.baseline-on-migrate = true
 Newly created SQL scripts placed in `banking-service\src\main\resources\db\migrations` will automatically run when the application starts. The database will keep track of all schema change history. <br/>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/921ac27b-7515-439a-9125-cfbc48b0ec8a" />
+  <img src="https://github.com/user-attachments/assets/7dd68bbe-3543-4988-ad01-ef636d95b864" />
+</p> <br/>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5be1b48c-ea95-4829-9075-f22d372d7ef3" />
 </p> <br/>
 
 ### Event driven capabilities using kafka
