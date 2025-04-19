@@ -41,19 +41,19 @@ Install MySQL server and start the server. Run the command on SQL workbench to c
 create schema bankingservice
 ```
 
-Go to `application.properties` in banking-service and notification-service. Update the username and password.
+Go to `application.properties` in banking-service and notification-service. Update the username and password. (Database)
 ```
 spring.datasource.username=<username>
 spring.datasource.password=<password>
 ```
 
-Go to `client.properties` in banking-service and notification-service. Update the username and password.
+Go to `client.properties` in banking-service and notification-service. Update the username and password.  (Kafka)
 ```
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='<username>' password='<password>';
 ```
 
 Go to https://support.google.com/accounts/answer/185833?hl=en. Create a app-password. <br/>
-Go to `notification-service/src/main/java/com/notificationservice/service/NotificationService.java`. Update email and app-password.
+Go to `notification-service/src/main/java/com/notificationservice/service/NotificationService.java`. Update email and app-password. (Google Account)
 ```
 Session session = Session.getInstance(props, new Authenticator(){
     protected PasswordAuthentication getPasswordAuthentication() {
