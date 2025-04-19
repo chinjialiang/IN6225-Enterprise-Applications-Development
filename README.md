@@ -370,3 +370,32 @@ public static void sendEmailNotification(String message) throws JsonProcessingEx
     );
 }
 ```
+
+## Future Improvements
+### Using NGINX as reverse proxy
+A reverse proxy listens on the default ports and forwards incoming requests to the appropriate backend port behind the scenes. This way users do not have to remember the port number.
+```
+server {
+    listen 80;
+    server_name mydomain.com;
+
+    location /api/ {
+        proxy_pass http://localhost:3000/;  # your service
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+```
+Now if a user visits:
+```
+http://mydomain.com/api/users
+```
+NGINX internally sends that to:
+```
+http://localhost:3000/api/users
+```
+
+### Application Monitoring
+Micrometer provides a simple facade over the instrumentation clients for a number of popular monitoring systems. Currently, it supports the following monitoring systems: Atlas, Datadog, Graphite, Ganglia, Influx, JMX, and Prometheus. 
+Read more: https://www.baeldung.com/micrometer
